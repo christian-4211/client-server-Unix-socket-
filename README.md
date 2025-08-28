@@ -16,7 +16,7 @@
 **Section IV. User Guide** <br />
 This program contains just two files, c.cpp (the client file) and s.cpp (the server file). The server must be running first, and then the client can start running to send the data. 
 
-To run the server, it first needs to be compiled:                                                           g++ -std=c++11 s.cpp -o s
+To run the server, it first needs to be compiled: ```g++ -std=c++11 s.cpp -o s```
 Now it can be run with the following command:                                                               ./s
 Similarly, the client program needs to be compiled:                                                         g++ -std=c++11 c.cpp -o c
 It can be run with the same command:                                                                        ./c
