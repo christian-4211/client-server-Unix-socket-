@@ -35,9 +35,9 @@ This allows both programs to iterate through the files, use randomly generated n
 The client program will need the following file: ```./ip_port.txt``` <br />
 
 Within the working directory. This .txt contains two lines. The first line should hold only the server IP address, and the second line should only hold the server port. 
-For example, if using the local loop back, the entire contents of the file should look like so:
-                                                                                                            ```127.0.0.1```<br />
-                                                                                                            ```7777```<br />
+For example, if using the local loop back, the entire contents of the file should look like so: <br />
+```127.0.0.1```<br />
+```7777```<br />
                                                                                                             
 Furthermore, both the client and server store their own IP addresses and port numbers inside their respective files. For the server, the IP address and port are both set in the #define section just below the namespace declaration. 
 Should a different server IP be warranted, it should be changed both in the #define section in s.cpp, as well as within ip_port.txt. The client IP address and port are both set within the set_header() function, below the struct declarations. 
