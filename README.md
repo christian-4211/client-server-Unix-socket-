@@ -1,4 +1,4 @@
-Section I. Functionality
+**#Section I. Functionality**
   The program does not meet all required features, as the server currently does not concatenate all the files, and send them to the client for the final check. 
  However, the code to check when all server-side files are filled has been completed. The one required feature that does not work fully is the checksum in the server program. 
  It checks to make sure the sent checksum and calculated (server-side) checksum match. The code currently does nothing if they don’t match – this is where the server should re-request the corrupted packet with a sendto() call. 
@@ -56,7 +56,7 @@ Filename (String – 8 bytes), 4 bytes of padding, Total Lines (Int – 8 bytes)
 |        Client IP Address	   |  Cport  |	  Filename	  | Padding |         
 +-------------+----------------+---------+-------+--------+---------+
 |    Tlines   |      Cline     |      Fline      |     Checksum     |               
-+-------------------------------------------------------------------+
++-------------+----------------+-----------------+------------------+
 |                  Payload [Remainder of 1024 Bytes]                |
 +-------------------------------------------------------------------+ 
 ```
