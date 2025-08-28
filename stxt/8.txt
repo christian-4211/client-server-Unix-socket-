@@ -1,0 +1,45 @@
+Everyone knows that debugging is twice as hard as writing a program in the first place.
+So if you're as clever as you can be when you write it, how will you ever debug it?
+
+Programs should be written for people to read, and only incidentally for machines to execute.
+
+The most effective debugging tool is still careful thought, coupled with plain common sense.
+
+Don’t patch bad code—rewrite it.
+Patches pile on complexity, and complexity breeds bugs.
+
+Choose a style and stick with it.
+Indentation and naming are not decorations; they are structure.
+
+Don’t be afraid to delete code.
+Shorter is often clearer.
+
+Global variables are like public toilets:
+usable, but dirty and dangerous.
+
+Functions should do one thing.
+If a function does five things, it’s five functions.
+
+Write code that explains itself.
+If you need a long comment to explain what it does, consider rewriting it.
+
+And please—test your assumptions.
+Most bugs are logical, not syntactical.
+
+Don’t hardcode constants.
+Don’t abuse gotos.
+Don’t optimize prematurely.
+
+When in doubt, make it simpler.
+The best code is obvious—not clever.
+
+If you find yourself writing the same thing twice, abstract it.
+But don't abstract so aggressively that no one can follow the logic.
+
+Programming is about communication, not performance.
+Communicate clearly—both to the computer and to your future self.
+
+That’s what good style is.
+Not fancy syntax. Not obscure tricks.
+
+Just clean, readable, honest code. - Brian Kernighan
