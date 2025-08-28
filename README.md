@@ -51,18 +51,18 @@ If required, the c_str buffer could be increased within both of the client and s
 Filename (String – 8 bytes), 4 bytes of padding, Total Lines (Int – 8 bytes), Current Line (Int – 8 bytes), Total File Line [Fline] (Int – 8 bytes), Checksum (Int – 8 bytes), Payload (~960 bytes):
 
 ```
-0			   7			    15   			        23	 		         31	
-+--------------------+--------+---------------+---------+
-| Client IP Address	 | C Port |	  Filename	  | Padding |         
-+--------+-----------+--------+--------+------+---------+
-| Tlines |   Cline   |      Fline      |     Checksum   |               
-+--------+-----------+-----------------+----------------+
-|          Payload [Remainder of 1024 Bytes]            |
-+-------------------------------------------------------+ 
+0		       7		       15		        23		        31	
++------------------------------+---------+----------------+---------+
+|        Client IP Address	   |  Cport  |	  Filename	  | Padding |         
++-------------+----------------+---------+-------+--------+---------+
+|    Tlines   |      Cline     |      Fline      |     Checksum     |               
++-------------------------------------------------------------------+
+|                  Payload [Remainder of 1024 Bytes]                |
++-------------------------------------------------------------------+ 
 ```
 
 
-Where 'Tlines' = Total Lines, 'Cline' = Current Line, and 'Fline' = Total File Line. The header is packed into the buffer, and the file contents are appended afterwards. 
+Where 'Cport' = Client Port, 'Tlines' = Total Lines, 'Cline' = Current Line, and 'Fline' = Total File Line. The header is packed into the buffer, and the file contents are appended afterwards. 
 Because the buffer’s entire size is 1024, the header data isn’t directly constrained for space. This means various other header variables could be created, and packed into the header buffer, should they be desired. 
  
 To test packet loss, iproute2 was utilized. If required, it can be downloaded in a Debian-based terminal with a command like so:     sudo apt install iproute2
