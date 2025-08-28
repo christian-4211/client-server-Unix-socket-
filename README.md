@@ -3,17 +3,17 @@
  However, the code to check when all server-side files are filled has been completed. The one required feature that does not work fully is the checksum in the server program. 
  It checks to make sure the sent checksum and calculated (server-side) checksum match. The code currently does nothing if they don’t match – this is where the server should re-request the corrupted packet with a sendto() call. 
 
-Section II. Extra Features
+**Section II. Extra Features** <br />
 	One small extra feature was added to this project. Inside the client program, when main() is called, the starting time of the program is measured (start), and the rest of the program runs through. 
  At the end of the main() function, the check_time(start) function is called. Inside check_time(), the time is measured once more (end), and the difference of these variables is obtained (duration). 
  Duration is printed out to the terminal in milliseconds. This function simply measures how long it takes for the client and server programs to run and exchange files, working as a performance indicator. 
 
-Section III. Program Instructions
+**Section III. Program Instructions** <br />
 	This program was written in C++11 with Unix/Linux sockets and functions within a 64-bit Ubuntu VirtualBox VM. It uses the local loopback address (127.0.0.1) as the IPv4 address. 
  However, it was also tested on two physical Debian-based Linux machines in a limited manner (Linux Mint, Linux Kali) with their private IPv4 addresses rather than the loopback address, and the program functioned identically. 
  It should function properly on most Linux configurations. More specific directions on how to set up and run the code are available in Section IV. 
 
-Section IV. User Guide
+**Section IV. User Guide** <br />
 This program contains just two files, c.cpp (the client file) and s.cpp (the server file). The server must be running first, and then the client can start running to send the data. 
 
 To run the server, it first needs to be compiled:                                                           g++ -std=c++11 s.cpp -o s
