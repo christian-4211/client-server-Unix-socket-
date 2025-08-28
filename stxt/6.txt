@@ -1,0 +1,29 @@
+Programmers are not trained to think adversarially.
+They think: ‘What’s the intended use of this code?’
+
+Attackers think: ‘How can I use this in an unintended way?’
+
+This gap creates the majority of vulnerabilities.
+
+Functions assume input is sane.
+They trust memory, they trust the compiler, they trust bounds.
+
+Stop trusting. Validate input.
+Better: eliminate the need to trust entirely.
+
+Move away from unsafe abstractions.
+Don’t write code that copies strings—use constant-sized buffers or eliminate copying entirely.
+
+Most bugs aren’t subtle. They’re careless.
+They come from too many assumptions.
+
+Code that’s secure is boring.
+It avoids features. It avoids cleverness.
+
+If the code is hard to audit, it’s probably exploitable.
+
+Want to stop buffer overflows?
+Don’t use functions that overflow.
+
+Don’t complain about the complexity of mitigation.
+Complain about the complexity of your code. - Daniel Bernstein
