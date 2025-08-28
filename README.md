@@ -16,14 +16,14 @@
 **Section IV. User Guide** <br />
 This program contains just two files, c.cpp (the client file) and s.cpp (the server file). The server must be running first, and then the client can start running to send the data. 
 
-To run the server, it first needs to be compiled: ```g++ -std=c++11 s.cpp -o s```
-Now it can be run with the following command:                                                               ./s
-Similarly, the client program needs to be compiled:                                                         g++ -std=c++11 c.cpp -o c
-It can be run with the same command:                                                                        ./c
+To run the server, it first needs to be compiled: ```g++ -std=c++11 s.cpp -o s``` <br />
+Now it can be run with the following command: ```./s``` <br />
+Similarly, the client program needs to be compiled: ```g++ -std=c++11 c.cpp -o c``` <br />
+It can be run with the same command: ```./c``` <br />
 Both programs will communicate together with the data inside the .txt files. 
 
-Assuming both programs are within the working directory (./), the client .txt files need to be stored here: ./ctxt
-Before the programs are running, a dir for the server .txt files also needs to be created:                  ./stxt
+Assuming both programs are within the working directory (./), the client .txt files need to be stored here: ```./ctxt``` <br />
+Before the programs are running, a dir for the server .txt files also needs to be created: ```./stxt``` <br />
 
 This allows the client program to read from the .txt files, as it anticipates these files to be within the ctxt dir. Similarly, the server program is expecting to write to the files within the stxt dir. 
 If the stxt dir does not exist, the server will never write any data. The client files stored in the ctxt directory must be named as follows:
@@ -32,12 +32,12 @@ If the stxt dir does not exist, the server will never write any data. The client
 
 This allows both programs to iterate through the files, use randomly generated numbers (RNG) to select a random file out of the pool, among other features. 
 
-The client program will need the following file:                                                            ./ip_port.txt
+The client program will need the following file: ```./ip_port.txt``` <br />
 
 Within the working directory. This .txt contains two lines. The first line should hold only the server IP address, and the second line should only hold the server port. 
 For example, if using the local loop back, the entire contents of the file should look like so:
-                                                                                                            127.0.0.1
-                                                                                                            7777
+                                                                                                            ```127.0.0.1
+                                                                                                            7777``` <br />
                                                                                                             
 Furthermore, both the client and server store their own IP addresses and port numbers inside their respective files. For the server, the IP address and port are both set in the #define section just below the namespace declaration. 
 Should a different server IP be warranted, it should be changed both in the #define section in s.cpp, as well as within ip_port.txt. The client IP address and port are both set within the set_header() function, below the struct declarations. 
@@ -65,7 +65,7 @@ Filename (String – 8 bytes), 4 bytes of padding, Total Lines (Int – 8 bytes)
 Where 'Cport' = Client Port, 'Tlines' = Total Lines, 'Cline' = Current Line, and 'Fline' = Total File Line. The header is packed into the buffer, and the file contents are appended afterwards. 
 Because the buffer’s entire size is 1024, the header data isn’t directly constrained for space. This means various other header variables could be created, and packed into the header buffer, should they be desired. 
  
-To test packet loss, iproute2 was utilized. If required, it can be downloaded in a Debian-based terminal with a command like so:     sudo apt install iproute2
-After download, to test for packet loss, the following command can be run:                                                           sudo tc qdisc add dev lo root netem loss 5%
+To test packet loss, iproute2 was utilized. If required, it can be downloaded in a Debian-based terminal with a command like so: ```sudo apt install iproute2``` <br />
+After download, to test for packet loss, the following command can be run: ```sudo tc qdisc add dev lo root netem loss 5%``` <br />
 
 In this case, the network is simulating 5% packet loss. In this instance, the network is simulating packet loss on the local loopback, hence ‘lo’ within this last command.
